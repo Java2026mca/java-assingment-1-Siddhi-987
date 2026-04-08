@@ -2,24 +2,24 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        int[][] A = {{1,2},{3,4}};
+        int[][] B = {{5,6},{7,8}};
+        int[][] C = new int[2][2];
 
-        // TODO: Read two n×n matrices A and B, multiply them → print result C = A×B
-        //       Input: matrix A row by row, then matrix B row by row
-        //       Output: result matrix row by row, values separated by spaces
-        //
-        // Input:
-        // 2
-        // 1 2
-        // 3 4
-        // 5 6
-        // 7 8
-        //
-        // Output:
-        // 19 22
-        // 43 50
+        for(int i=0;i<2;i++){
+            for(int j=0;j<2;j++){
+                for(int k=0;k<2;k++){
+                    C[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
 
+        for(int i=0;i<2;i++){
+            for(int j=0;j<2;j++){
+                System.out.print(C[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
  
